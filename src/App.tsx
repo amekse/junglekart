@@ -23,8 +23,8 @@ function App() {
           <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/item/:id" element={<ItemDetails />} />
-                <Route path="/search/:query" element={<ItemsCatalogue />} />
+                <Route path="/item/:itemId" element={<ItemDetails />} />
+                <Route path="/search/:searchedText/:suggestedText" element={<ItemsCatalogue />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout/>} />
                 <Route path="/pay" element={<Payment />} />

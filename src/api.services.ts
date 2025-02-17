@@ -1,3 +1,5 @@
+import { ItemCardDef } from "./pages/pages.types";
+
 async function headerSearchBarSuggestion(searchText:String) {
     try {
         if (searchText && searchText.trim() !== "") {
@@ -20,6 +22,38 @@ async function headerSearchBarSuggestion(searchText:String) {
     return [];
 }
 
+async function itemsCatalogueSearchProducts(searchText:String) {
+    try {
+        if (searchText && searchText.trim() !== "") {
+            const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+            if (!res.ok) {
+                console.log(`API error on https://dummyjson.com/products/search?q=${searchText}`, res);
+                return "API failed";
+            }
+            const body = await res.json();
+            if (typeof body === "object" && body.hasOwnProperty("products")) {
+                return body.products.map((item:ItemCardDef) => ({
+                    id: item.id,
+                    title: item.title,
+                    description: item.description,
+                    category: item.category,
+                    price: item.price,
+                    rating: item.rating,
+                    stock: item.stock,
+                    tags: item.tags,
+                    sku: item.sku,
+                    availabilityStatus: item.availabilityStatus,
+                    thumbnail: item.thumbnail
+                }));
+            }
+        }
+    } catch (e) {
+        console.log(`API error on https://dummyjson.com/products/search?q=${searchText}`)
+    }
+    return [];
+}
+
 export {
-    headerSearchBarSuggestion
+    headerSearchBarSuggestion,
+    itemsCatalogueSearchProducts
 }
