@@ -2,8 +2,24 @@ import { Autocomplete, Box, IconButton, TextField, Typography } from "@mui/mater
 import styles from "./components.styles";
 import { Menu as MenuIcon, ShoppingCart as ShoppingCartIcon, Info as InfoIcon } from "@mui/icons-material";
 import { HeaderProps } from "./components.types";
+import { headerSearchBarSuggestion } from "../api.services";
+import { useMemo, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { throttle } from "../utils";
 
 export default function Header({ toggleShowNavigation }: HeaderProps) {
+    const [suggestText, setSuggestText] = useState<String>("");
+    const suggestionThrottle = throttle(headerSearchBarSuggestion, 150);
+
+    const suggestionsQuery = useQuery({
+        queryKey: ['header-suggest', suggestText],
+        queryFn: () => suggestionThrottle(suggestText),
+        enabled: suggestText.trim().length > 0
+    });
+
+    const suggestionsToShow = useMemo(() => {
+        return suggestionsQuery.data ? suggestionsQuery.data.map((item: {id:number, title:string}) => item.title) : [];
+    }, [suggestionsQuery.data])
 
     return (
         <Box sx={styles.header}>
@@ -12,8 +28,8 @@ export default function Header({ toggleShowNavigation }: HeaderProps) {
                     <MenuIcon onClick={toggleShowNavigation} />
                 </IconButton>
                 <Typography variant="h6" fontWeight={800}>JungleKart</Typography>
-                <Autocomplete freeSolo options={[]} renderInput={(params) => <TextField {...params} label="Search" />}  />
             </Box>
+            <Autocomplete fullWidth freeSolo options={suggestionsToShow} renderInput={(params) => <TextField {...params} label="Search" onChange={e => setSuggestText(e.target.value)} />}  />
             <Box sx={styles.headerSubSection}>
                 <IconButton>
                     <ShoppingCartIcon />
