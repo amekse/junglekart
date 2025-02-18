@@ -24,17 +24,3 @@ input[type=number] {
     justify-content: space-between;
     gap: 16px;
 }
-
-.itemCatalogueFilterAndSort {
-    width: 30%;
-    height: 90vh;
-    padding: 16px;
-    border: 1px solid #4A6D57;
-    border-radius: 4px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 16px;
-}

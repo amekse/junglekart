@@ -15,7 +15,21 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '16px'
-    }
+    },
+    filterAndSortRowSec: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        gap: '8px'
+    },
+    filterAndSortColSec: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        gap: '8px'
+    },
 }
 
 export default styles;

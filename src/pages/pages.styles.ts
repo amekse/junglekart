@@ -11,21 +11,7 @@ const styles = {
     },
     itemCatalogueItemCard: {
         width: '12vw',
-    },
-    filterAndSortRowSec: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        gap: '8px'
-    },
-    filterAndSortColSec: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        gap: '8px'
-    },
+    }
 }
 
 export default styles;
