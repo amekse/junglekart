@@ -38,16 +38,14 @@ export default function AdBanner(props:AdBannerProps) {
 
     const AdBanner = ({classByOrientation}: {classByOrientation:string}) => {
         return (
-            <div className="adBannerWrap">
-                <div className={`adBanner ${classByOrientation}`} style={configureCustomStyles(customStyle)}>
-                    <div>
-                        <span>{title} on {prodTitle}</span>
-                        <p>
-                            {para}
-                        </p>
-                    </div>
-                    <img src={imageUrl} alt="" className="adBannerImage" />
+            <div className={`adBanner ${classByOrientation}`} style={configureCustomStyles(customStyle)}>
+                <div>
+                    <span>{title} on {prodTitle}</span>
+                    <p>
+                        {para}
+                    </p>
                 </div>
+                <img src={imageUrl} alt="" className="adBannerImage" />
             </div>
         )
     }

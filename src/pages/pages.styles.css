@@ -24,3 +24,13 @@ input[type=number] {
     justify-content: space-between;
     gap: 16px;
 }
+
+.homeContent {
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
