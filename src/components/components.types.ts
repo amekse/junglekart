@@ -16,8 +16,20 @@ type FilterSortProps = {
     onChange: (current: FilterSortConfig) => void
 }
 
+type AdBannerStyleProps = {
+    height?: number | string,
+    width?: number | string
+}
+
+type AdBannerProps = {
+    orientation: "landscape" | "potrait" | "square",
+    customStyle?: AdBannerStyleProps
+}
+
 export type {
     HeaderProps,
     FilterSortConfig,
-    FilterSortProps
+    FilterSortProps,
+    AdBannerProps,
+    AdBannerStyleProps
 }
