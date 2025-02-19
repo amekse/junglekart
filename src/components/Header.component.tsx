@@ -24,11 +24,7 @@ export default function Header({ toggleShowNavigation }: HeaderProps) {
     }, [suggestionsQuery.data])
 
     const handleSearchClick = (searchText:String, ) => {
-        if (suggestText === searchText) {
-            navigate(`/search/${suggestText}`);
-        } else {
-            navigate(`/search/${suggestText}/${searchText}`);
-        }
+        navigate(`/search/${suggestText}/${searchText}`);
     }
 
     return (

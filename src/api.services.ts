@@ -53,7 +53,37 @@ async function itemsCatalogueSearchProducts(searchText:String) {
     return [];
 }
 
+async function itemsCatalogueCatagoryProducts(category:string) {
+    try {
+        if (category && category.trim() !== "") {
+            const res = await fetch(`https://dummyjson.com/products/category/${category}`);
+            if (!res.ok) {
+                console.log(`API error on https://dummyjson.com/products/category/${category}`, res);
+            }
+            const body = await res.json();
+            if (typeof body === "object" && body.hasOwnProperty("products")) {
+                return body.products.map((item:ItemCardDef) => ({
+                    id: item.id,
+                    title: item.title,
+                    description: item.description,
+                    category: item.category,
+                    price: item.price,
+                    rating: item.rating,
+                    stock: item.stock,
+                    tags: item.tags,
+                    sku: item.sku,
+                    availabilityStatus: item.availabilityStatus,
+                    thumbnail: item.thumbnail
+                }));
+            }
+        }
+    } catch (e) {
+        console.log(`API error on https://dummyjson.com/products/category/${category}`)
+    }
+}
+
 export {
     headerSearchBarSuggestion,
-    itemsCatalogueSearchProducts
+    itemsCatalogueSearchProducts,
+    itemsCatalogueCatagoryProducts
 }

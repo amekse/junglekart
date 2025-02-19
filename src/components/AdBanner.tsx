@@ -5,9 +5,9 @@ export default function AdBanner(props:AdBannerProps) {
 
     const switchByOrientation = () => {
         switch(orientation) {
-            case "landscape": return "adAdBannerLandscape";
-            case "potrait": return "adAdBannerPotrait";
-            case "square": return "adAdBannerSquare";
+            case "landscape": return "adBannerLandscape";
+            case "potrait": return "adBannerPotrait";
+            case "square": return "adBannerSquare";
         }
     }
 

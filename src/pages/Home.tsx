@@ -3,12 +3,14 @@ import AdBanner from "../components/AdBanner";
 import Header from "../components/Header.component";
 import { useHomeStore } from "./pages.stores";
 import { categories } from "./pages.constants";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
     const { showNavigation, toggleShowNavigation } = useHomeStore();
+    const navigate = useNavigate();
 
     const handleCategoryClick = (itemCategory:string) => {
-        console.log('CP1', itemCategory)
+        navigate(`/search/${itemCategory}`)
     }
 
     return (

@@ -17,7 +17,7 @@ export default function FilterSort(props:FilterSortProps) {
     });
 
     return (
-        <div className="itemCatalogueFilterAndSort">
+        <div className="filterAndSort">
             <Typography variant="subtitle1" fontWeight={800}>Sort By:</Typography>
             <Box sx={styles.filterAndSortColSec}>
                 <Button variant="text" size="small">Relevance</Button>
