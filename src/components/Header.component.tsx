@@ -37,7 +37,10 @@ export default function Header({ toggleShowNavigation }: HeaderProps) {
                 <IconButton>
                     <MenuIcon onClick={toggleShowNavigation} />
                 </IconButton>
-                <Typography variant="h6" fontWeight={800}>JungleKart</Typography>
+                <Box sx={{...styles.headerSubSection, gap: 0}}>
+                    <Typography variant="h5" color="secondary" fontWeight={800} fontFamily="Helvetica, Arial, sans-serif">Jungle</Typography>
+                    <Typography variant="h5" color="text.secondary" fontFamily="Helvetica, Arial, sans-serif">Kart</Typography>
+                </Box>
             </Box>
             <Autocomplete fullWidth freeSolo onChange={(e, v) => handleSearchClick(v as String)} options={!suggestionsQuery.isLoading ? suggestionsToShow : []} renderInput={(params) => <TextField {...params} label="Search" onChange={e => setSuggestText(e.target.value)} />}  />
             <Box sx={styles.headerSubSection}>
