@@ -1,14 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { itemsCatalogueCatagoryProducts, itemsCatalogueSearchProducts } from "../api.services";
-import { ItemCardDef } from "./pages.types";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "./pages.styles.css";
 import Header from "../components/Header.component";
 import { useHomeStore } from "./pages.stores";
 import { useMemo } from "react";
 import styles from "./pages.styles";
 import FilterSort from "../components/FilterSort.component";
+import ItemCard from "../components/ItemCard.component";
+import { ItemCardDef } from "../components/components.types";
 
 export default function ItemsCatalogue() {
     const { searchedText, suggestedText, category } = useParams();
@@ -43,17 +44,6 @@ export default function ItemsCatalogue() {
         return [];
     }, [productsFromSearchedText.data, productsFromSuggestedText.data, productsFromCategory.data, suggestedText, searchedText, category])
 
-    const ProductCard = ({item}:{item:ItemCardDef}) => {
-        return (
-            <Card sx={styles.itemCatalogueItemCard}>
-                <CardMedia component="img" image={item.thumbnail} alt="" loading="lazy" />
-                <CardContent>
-                    <Typography>{item.title}</Typography>
-                </CardContent>
-            </Card>
-        )
-    }
-
     return (
         <div>
             <Header toggleShowNavigation={toggleShowNavigation} />
@@ -64,7 +54,7 @@ export default function ItemsCatalogue() {
                     <div className="itemCatalogueSections">
                         <FilterSort onChange={() => {}}/>
                         <Box sx={styles.itemCatalogueItemsList}>
-                            {productsToShow.map((item:ItemCardDef) => <ProductCard key={item.id} item={item} />)}
+                            {productsToShow.map((item:ItemCardDef) => <ItemCard key={item.id} item={item} />)}
                         </Box>
                     </div>
                 : <Typography variant="h6">Oops, something went wrong!</Typography>

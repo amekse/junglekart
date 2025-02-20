@@ -1,4 +1,4 @@
-import { ItemCardDef } from "./pages/pages.types";
+import { ItemCardDef, QuickItemInfoDef } from "./components/components.types";
 
 async function headerSearchBarSuggestion(searchText:String) {
     try {
@@ -82,8 +82,30 @@ async function itemsCatalogueCatagoryProducts(category:string) {
     }
 }
 
+async function homeCatagoryItems(category:string) {
+    try {
+        if (category && category.trim() !== "") {
+            const res = await fetch(`https://dummyjson.com/products/category/${category}?limit=7`);
+            if (!res.ok) {
+                console.log(`API error on https://dummyjson.com/products/category/${category}`, res);
+            }
+            const body = await res.json();
+            if (typeof body === "object" && body.hasOwnProperty("products")) {
+                return body.products.map((item:QuickItemInfoDef) => ({
+                    id: item.id,
+                    title: item.title,
+                    thumbnail: item.thumbnail
+                }));
+            }
+        }
+    } catch (e) {
+        console.log(`API error on https://dummyjson.com/products/category/${category}`)
+    }
+}
+
 export {
     headerSearchBarSuggestion,
     itemsCatalogueSearchProducts,
-    itemsCatalogueCatagoryProducts
+    itemsCatalogueCatagoryProducts,
+    homeCatagoryItems
 }

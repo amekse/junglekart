@@ -30,6 +30,9 @@ const styles = {
         justifyContent: 'flex-start',
         gap: '8px'
     },
+    itemCard: {
+        width: '12vw',
+    }
 }
 
 export default styles;

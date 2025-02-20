@@ -9,8 +9,30 @@ const styles = {
 
         width: '100%'
     },
-    itemCatalogueItemCard: {
-        width: '12vw',
+    homeSectionCategoryBox: {
+        display: 'flex',
+        wid: '100%',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        flexWrap: 'wrap',
+        alignItems: 'flex-start',
+        gap: '4px' 
+    },
+    homeSectionShopBy: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        gap: '4px'
+    },
+    homeScrollableItemsList: {
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        overflowX: 'scroll'
     }
 }
 
