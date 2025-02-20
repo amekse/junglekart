@@ -5,9 +5,9 @@ import { ItemCardDef, QuickItemInfoDef } from "./components.types";
 export default function ItemCard({item}:{item:ItemCardDef|QuickItemInfoDef}) {
     return (
         <Card sx={styles.itemCard}>
-            <CardMedia component="img" image={item.thumbnail} alt="" loading="lazy" />
+            <CardMedia sx={{ bgcolor: 'background.paper' }} component="img" image={item.thumbnail} alt="" loading="lazy" />
             <CardContent>
-                <Typography>{item.title}</Typography>
+                <Typography sx={styles.itemCardTitle}>{item.title}</Typography>
             </CardContent>
         </Card>
     )

@@ -34,6 +34,9 @@ export default function Home() {
                 {
                     data.map((item:QuickItemInfoDef) => <ItemCard item={item} />)
                 }
+                {
+                    data.map((item:QuickItemInfoDef) => <ItemCard item={item} />) // FIXME: Repeating list due to lack of dummy data
+                }
             </Box>
         )
     }

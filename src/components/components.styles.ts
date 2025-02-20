@@ -32,6 +32,14 @@ const styles = {
     },
     itemCard: {
         width: '12vw',
+        flexShrink: '0'
+    },
+    itemCardTitle: {
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
+        display: "block",
+        width: "100%",
     }
 }
 

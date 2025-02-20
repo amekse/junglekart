@@ -85,7 +85,7 @@ async function itemsCatalogueCatagoryProducts(category:string) {
 async function homeCatagoryItems(category:string) {
     try {
         if (category && category.trim() !== "") {
-            const res = await fetch(`https://dummyjson.com/products/category/${category}?limit=7`);
+            const res = await fetch(`https://dummyjson.com/products/category/${category}?limit=5`);
             if (!res.ok) {
                 console.log(`API error on https://dummyjson.com/products/category/${category}`, res);
             }

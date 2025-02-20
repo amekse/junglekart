@@ -32,7 +32,11 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        overflowX: 'scroll'
+        overflowX: 'auto',
+        gap: '16px',
+        bgcolor: 'secondary.light',
+        padding: '8px',
+        borderRadius: '4px'
     }
 }
 
