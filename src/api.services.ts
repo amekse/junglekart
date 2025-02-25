@@ -103,9 +103,25 @@ async function homeCatagoryItems(category:string) {
     }
 }
 
+async function itemDetailsById(itemId: string) {
+    try {
+        const res = await fetch(`https://dummyjson.com/products/${itemId}`);
+        if (!res.ok) {
+            console.log(`API error on https://dummyjson.com/products/${itemId}`);
+        }
+        const body = await res.json();
+        if (typeof body === "object") {
+            return body;
+        }
+    } catch (e) {
+        console.log(`API error on https://dummyjson.com/products/${itemId}`);
+    }
+}
+
 export {
     headerSearchBarSuggestion,
     itemsCatalogueSearchProducts,
     itemsCatalogueCatagoryProducts,
-    homeCatagoryItems
+    homeCatagoryItems,
+    itemDetailsById
 }

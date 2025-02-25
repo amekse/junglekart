@@ -19,6 +19,10 @@ export default function Home() {
         navigate(`/search/${itemCategory}`)
     }
 
+    const handleItemClick = (itemId:string|number) => {
+        navigate(`/item/${itemId}`);
+    }
+
     const ScrollableCategoryItemsList = ({categoryId}:{categoryId:string}) => {
         const { data, isLoading} = useQuery({
             queryKey: ['home-category-items', categoryId],
@@ -32,7 +36,7 @@ export default function Home() {
         return (
             <Box sx={styles.homeScrollableItemsList}>
                 {
-                    data.map((item:QuickItemInfoDef) => <ItemCard item={item} />)
+                    data.map((item:QuickItemInfoDef) => <ItemCard item={item} onClick={handleItemClick} />)
                 }
                 {
                     data.map((item:QuickItemInfoDef) => <ItemCard item={item} />) // FIXME: Repeating list due to lack of dummy data

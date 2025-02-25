@@ -34,3 +34,39 @@ input[type=number] {
   align-items: flex-start;
   gap: 8px;
 }
+
+.itemDetailsColumn {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.itemDetailsContainer {
+  padding: 8px 16px;
+}
+
+.itemDetailsRow {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.itemDetailsImg {
+  width: 40vw;
+  height: 40vw;
+}
+
+.itemDetailsImageCarousel {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.itemDetailsActionArea {
+  width: 40%;
+  max-height: 90vh;
+
+  border: 1px solid #388E3C;
+  border-radius: 4px;
+}
