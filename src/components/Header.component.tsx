@@ -27,16 +27,22 @@ export default function Header({ toggleShowNavigation }: HeaderProps) {
         navigate(`/search/${suggestText}/${searchText}`);
     }
 
+    const handleLogoClick = () => {
+        navigate('/');
+    }
+
     return (
         <Box sx={styles.header}>
             <Box sx={styles.headerSubSection}>
                 <IconButton>
                     <MenuIcon onClick={toggleShowNavigation} />
                 </IconButton>
-                <Box sx={{...styles.headerSubSection, gap: 0}}>
-                    <Typography variant="h5" color="secondary" fontWeight={800} fontFamily="Helvetica, Arial, sans-serif">Jungle</Typography>
-                    <Typography variant="h5" color="text.secondary" fontFamily="Helvetica, Arial, sans-serif">Kart</Typography>
-                </Box>
+                <div onClick={handleLogoClick} className="homeLogoContainer">
+                    <Box sx={{...styles.headerSubSection, gap: 0}}>
+                        <Typography variant="h5" color="secondary" fontWeight={800} fontFamily="Helvetica, Arial, sans-serif">Jungle</Typography>
+                        <Typography variant="h5" color="text.secondary" fontFamily="Helvetica, Arial, sans-serif">Kart</Typography>
+                    </Box>
+                </div>
             </Box>
             <Autocomplete fullWidth freeSolo onChange={(e, v) => handleSearchClick(v as String)} options={!suggestionsQuery.isLoading ? suggestionsToShow : []} renderInput={(params) => <TextField {...params} label="Search" onChange={e => setSuggestText(e.target.value)} />}  />
             <Box sx={styles.headerSubSection}>
