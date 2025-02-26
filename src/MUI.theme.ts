@@ -4,51 +4,58 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#388E3C", // Rich Jungle Green
-      dark: "#2E7D32", // Dense Canopy
-      light: "#66BB6A", // Fresh Leaf Green
-      contrastText: "#FFFFFF", // White for readability
+      main: "#3A6844", // Deeper, richer green
+      dark: "#2E5235", // Stronger contrast
+      light: "#8FCF8B", // Brighter highlight
+      contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#FBC02D", // Bright Sunlight Yellow
-      dark: "#F9A825", // Golden Sunset
-      light: "#FFECB3", // Soft Warm Glow
-      contrastText: "#1E1E1E", // Dark Text for contrast
+      main: "#4A5F4D", // Darker muted green for better contrast
+      dark: "#334736", // Deep tone for emphasis
+      light: "#98B59A", // Softer highlight
+      contrastText: "#FFFFFF",
     },
     success: {
-      main: "#4CAF50", // Vibrant Jungle Green
-      dark: "#388E3C", // Deeper Forest Green
-      light: "#81C784", // Soft Leafy Green
+      main: "#58A063", // More vibrant green
+      dark: "#3D7245", // Deeper contrast
+      light: "#A5E0A8", // Brighter success tint
       contrastText: "#FFFFFF",
     },
     error: {
-      main: "#E64A19", // Earthy Clay Red
-      dark: "#D84315", // Deep Terracotta
-      light: "#FF8A65", // Soft Sunset Hue
+      main: "#C05656", // Richer, deeper red
+      dark: "#8E4040", // More contrast
+      light: "#E69A9A", // Stronger pastel tint
       contrastText: "#FFFFFF",
     },
     warning: {
-      main: "#FFA726", // Tropical Orange
-      dark: "#FB8C00", // Ripe Mango
-      light: "#FFD54F", // Soft Sunshine Yellow
+      main: "#C49A40", // More vibrant gold
+      dark: "#93742E", // Stronger contrast
+      light: "#E8C882", // Softer highlight
       contrastText: "#1E1E1E",
     },
     info: {
-      main: "#039BE5", // Clear Sky Blue
-      dark: "#0288D1", // Amazon River Blue
-      light: "#81D4FA", // Light Airy Blue
+      main: "#4F8655", // Stronger greenish info tone
+      dark: "#3D6844", // More contrast
+      light: "#94C79C", // Brighter info tone
       contrastText: "#FFFFFF",
     },
     text: {
-      primary: "#1E3A2A", // Dark Green (Readable on Light BG)
-      secondary: "#4A6D57", // Mossy Green
-      disabled: "#A0B9A6", // Muted Green Fog
+      primary: "#1E2A22", // Darker for better readability
+      secondary: "#4A5F4D", // Deeper for stronger contrast
+      disabled: "#869E8C", // More visible muted text
     },
     background: {
-      default: "#FAF3E0", // Soft Warm Beige (Jungle Sand)
-      paper: "#FFF7E1", // Light Paper Tone
+      default: "#EDF7E6", // Slightly more contrast from white
+      paper: "#F0F5EC", // Subtle depth without looking washed out
     },
-    divider: "#BDB76B", // Earthy Bamboo Yellow
+    divider: "#BCC9B9", // Slightly deeper contrast
+    action: {
+      active: "#2E5235", // Stronger deep green
+      hover: "#8FCF8B", // More distinct hover effect
+      selected: "#58A063", // Stronger selection color
+      disabled: "#869E8C", // More readable disabled state
+      disabledBackground: "#DDE7DA", // Less washed-out background
+    },
   },
 });
 

@@ -3,6 +3,15 @@ type HomeStoreDef = {
     toggleShowNavigation: () => void
 }
 
+type ReviewDef = {
+    rating: number,
+    comment: string,
+    date: string,
+    reviewerName: string,
+    reviewerEmail: string
+}
+
 export type {
-    HomeStoreDef
+    HomeStoreDef,
+    ReviewDef
 }

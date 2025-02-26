@@ -37,6 +37,13 @@ const styles = {
         bgcolor: 'secondary.light',
         padding: '8px',
         borderRadius: '4px'
+    },
+    itemDetailsPurchaseButtons: {
+        borderRadius: '32px',
+        width: 'inherit'
+    },
+    itemDetailsReviewCard: {
+        width: '45%'
     }
 }
 

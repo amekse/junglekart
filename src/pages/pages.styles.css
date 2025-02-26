@@ -54,19 +54,77 @@ input[type=number] {
 }
 
 .itemDetailsImg {
-  width: 40vw;
+  width: 100%;
   height: 40vw;
+
+  object-fit: contain;
 }
 
 .itemDetailsImageCarousel {
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  position: relative;
+
+  gap: 16px;
+  padding: 0 16px;
+  background-color: #98B59A; /* secondary light */
+  border-radius: 8px;
+  margin: 8px 0;
 }
 
-.itemDetailsActionArea {
-  width: 40%;
-  max-height: 90vh;
+.itemDetailsImageCarouselInfo {
+  height: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
 
-  border: 1px solid #388E3C;
-  border-radius: 4px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemDetailsImageCarouselTags {
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.itemDetailsRightSec {
+  width: 60%;
+
+  background-color: #BCC9B9;
+  border-radius: 8px;
+  padding-left: 16px;
+}
+
+.itemDetailsRowAlignment {
+  gap: 8px;
+  align-items: center;
+}
+
+.itemDetailsPurchaseSec {
+  gap: 8px;
+  padding-right: 16px;
+}
+
+.itemDetailsPriceContainer {
+  border: 1px solid #3A6844;
+  padding: 8px;
+  border-radius: 32px;
+  width: fit-content;
+  text-wrap: nowrap;
+}
+
+.itemDetailsLeftSec {
+  gap: 8px;
+}
+
+.itemDetailsReviewList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  
 }

@@ -1,8 +1,15 @@
+:root {
+    --ad-background-color: #519872;
+    --ad-thumbnail-background-color: #A4B494;
+    --ad-text-color: #34252F;
+    --ad-subtext-color: #3B5249;
+}
+
 .filterAndSort {
     width: 30%;
     height: 90vh;
     padding: 16px;
-    border: 1px solid #388E3C;
+    border: 1px solid #BCC9B9;
     border-radius: 4px;
 
     display: flex;
@@ -13,7 +20,7 @@
 }
 
 .adBanner {
-    background-color: #384E3E;
+    background-color: var(--ad-background-color);
     border-radius: 4px;
 
     display: flex;
@@ -30,20 +37,20 @@
     height: 15vh;
     width: 30%;
     object-fit: contain;
-    background-color: #E2894F;
+    background-color: var(--ad-thumbnail-background-color);
 
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
     border-radius: 0 4px 4px 0;
 }
 
 .adBanner span {
-    color: #E2894F;
+    color: var(--ad-text-color);
     font-size: 30px;
     font-family: Papyrus,fantasy;
 }
 
 .adBanner p {
-    color: #F5DDB6;
+    color: var(--ad-subtext-color);
     font-size: 20px;
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -59,6 +66,6 @@
 }
 
 .adBannerSquare {
-    width: 15vh;
-    height: 15vh;
+    width: 100%;
+    height: 100%;
 }
