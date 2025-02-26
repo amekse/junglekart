@@ -53,6 +53,17 @@ const styles = {
         padding: '8px',
         borderRadius: '4px'
     },
+    home3ItemsDisplay: {
+        display: 'flex',
+        height: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        padding: '8px',
+        backgroundColor: '#58A063',
+        borderRadius: '4px',
+        gap: '8px'
+    }
 }
 
 export default styles;

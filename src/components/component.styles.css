@@ -73,3 +73,13 @@
 .homeLogoContainer {
     cursor: pointer;
 }
+
+.home3TileContainer {
+    width: 100%;
+    height: 61vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}

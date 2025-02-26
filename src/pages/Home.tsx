@@ -29,26 +29,26 @@ export default function Home() {
             <Header toggleShowNavigation={toggleShowNavigation} />
             <div className="homeContent">
                 <AdBanner orientation="landscape" />
-                <Typography variant="h5">Shop by categories: </Typography>
+                <Typography variant="h5">Shop by categories </Typography>
                 <Box sx={styles.homeSectionCategoryBox}>
                     {
                         categories.map(category => <Chip label={category.name} onClick={() => handleCategoryClick(category.slug)} />)
                     }
                 </Box>
-                <Typography variant="h5">Recently viewed: </Typography>
+                <Typography variant="h5" fontWeight={600}>Recently viewed </Typography>
                 <Box sx={styles.homeSectionShopBy}>
                     {/* TODO: Add content */}
                 </Box>
                 <Box sx={styles.homeSectionShopBy}>
-                    <Typography variant="h5">{dummyHomeData[0].name}</Typography>
+                    <Typography fontWeight={600} variant="h5">{dummyHomeData[0].name}</Typography>
                     <Home3ItemsDisplay categoryId={dummyHomeData[0].slug} />
                 </Box>
                 <Box sx={styles.homeSectionShopBy}>
-                    <Typography variant="h5">{dummyHomeData[1].name}</Typography>
+                    <Typography fontWeight={600} variant="h5">{dummyHomeData[1].name}</Typography>
                     <Home4ItemsDisplay categoryId={dummyHomeData[1].slug} />
                 </Box>
                 <Box sx={styles.homeSectionShopBy}>
-                    <Typography variant="h5">{dummyHomeData[2].name}</Typography>
+                    <Typography fontWeight={600} variant="h5">{dummyHomeData[2].name}</Typography>
                     <HomeScrollList categoryId={dummyHomeData[2].slug} />
                 </Box>
             </div>

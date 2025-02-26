@@ -23,6 +23,21 @@ export default function AdBanner(props:AdBannerProps) {
         return custStyle;
     }
 
+    const configureOrientationHeight = () => {
+        switch (orientation) {
+            case 'landscape': return '15vh';
+            case 'potrait':
+            case 'square': return '100%';
+        }
+    }
+
+    const configureOrientationClipPath = () => {
+        switch(orientation) {
+            case 'landscape': return 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)';
+            default: return 'none';
+        }
+    }
+
     const { title, para, imageUrl, prodTitle } = getAdContent();
 
     const AdBanner = ({classByOrientation}: {classByOrientation:string}) => {
@@ -34,7 +49,7 @@ export default function AdBanner(props:AdBannerProps) {
                         {para}
                     </p>
                 </div>
-                <img src={imageUrl} alt="" className="adBannerImage" />
+                <img src={imageUrl} alt="" className="adBannerImage" style={{ height: configureOrientationHeight(), width: '30vw', clipPath: configureOrientationClipPath() }} />
             </div>
         )
     }
