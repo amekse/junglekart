@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { itemDetailsById } from "../api.services";
 import Header from "../components/Header.component";
 import { useHomeStore } from "./pages.stores";
-import { Button, Card, CardContent, Chip, IconButton, Rating, Typography } from "@mui/material";
+import { Button, Card, CardContent, Chip, IconButton, Rating, Skeleton, Typography } from "@mui/material";
 import { useState } from "react";
 import { ChevronLeft as CheveronLeftIcon, ChevronRight as ChevronRightIcon, ShapeLine as ShapeLineIcon, Balance as BalanceIcon, Favorite as FavoriteIcon, AttachMoney as AttachMoneyIcon, FavoriteBorder as FavoriteBorderIcon, Sell as SellIcon, AccountBalance as AccountBalanceIcon, ShoppingCart as ShoppingCartIcon, StarHalf as StarHalfIcon, LocalShipping as LocalShippingIcon, AssignmentReturn as AssignmentReturnIcon, SafetyCheck as SafetyCheckIcon } from "@mui/icons-material";
 import styles from "./pages.styles";
@@ -23,8 +23,12 @@ export default function ItemDetails() {
 
     const LoadingSkeleton = () => {
         return (
-            <div className="itemDetailsColumn">
-
+            <div className="itemDetailsColumn itemDetailsContainer itemDetailsSkeletonContainers">
+                <Skeleton sx={styles.itemDetailsImgSkeleton} />
+                <div className="itemDetailsRow itemDetailsSkeletonContainers">
+                    <Skeleton sx={styles.itemDetailsLeftSkeleton} />
+                    <Skeleton sx={styles.itemDetailsRightSkeleton} />
+                </div>
             </div>
         )
     }

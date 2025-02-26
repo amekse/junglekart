@@ -44,6 +44,18 @@ const styles = {
     },
     itemDetailsReviewCard: {
         width: '45%'
+    },
+    itemDetailsImgSkeleton: {
+        width: '100%',
+        height: '60vh',
+    },
+    itemDetailsLeftSkeleton: {
+        height: '30vh',
+        width: '70%'
+    },
+    itemDetailsRightSkeleton: {
+        height: '30vh',
+        width: '30%'
     }
 }
 

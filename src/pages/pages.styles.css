@@ -128,3 +128,9 @@ input[type=number] {
   flex-wrap: wrap;
   
 }
+
+.itemDetailsSkeletonContainers {
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+}
