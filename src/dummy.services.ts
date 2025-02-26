@@ -20,7 +20,7 @@ const getHomeSectionCategories = () => {
     function generateData () {
         let alreadyAddedCategoriesId:string[] = [];
         let i = 0, j = 0; // i: iterator, j: max attempts allowed
-        while (i < 5 && j < 50) {
+        while (i < 3 && j < 50) {
             let currentSecCategory = categories[Math.floor(Math.random() * categories.length)];
             if (!alreadyAddedCategoriesId.includes(currentSecCategory.slug)) {
                 alreadyAddedCategoriesId.push(currentSecCategory.slug);

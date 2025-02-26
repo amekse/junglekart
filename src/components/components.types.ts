@@ -46,6 +46,10 @@ type QuickItemInfoDef = {
     thumbnail: string
 }
 
+type HomeSectionDef = {
+    categoryId: string,
+}
+
 export type {
     HeaderProps,
     FilterSortConfig,
@@ -53,5 +57,6 @@ export type {
     AdBannerProps,
     AdBannerStyleProps,
     ItemCardDef,
-    QuickItemInfoDef
+    QuickItemInfoDef,
+    HomeSectionDef
 }

@@ -40,7 +40,19 @@ const styles = {
         textOverflow: "ellipsis",
         display: "block",
         width: "100%",
-    }
+    },
+    homeScrollableItemsList: {
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        overflowX: 'auto',
+        gap: '16px',
+        bgcolor: 'secondary.light',
+        padding: '8px',
+        borderRadius: '4px'
+    },
 }
 
 export default styles;

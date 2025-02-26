@@ -26,18 +26,6 @@ const styles = {
         alignItems: 'flex-start',
         gap: '4px'
     },
-    homeScrollableItemsList: {
-        display: 'flex',
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        overflowX: 'auto',
-        gap: '16px',
-        bgcolor: 'secondary.light',
-        padding: '8px',
-        borderRadius: '4px'
-    },
     itemDetailsPurchaseButtons: {
         borderRadius: '32px',
         width: 'inherit'

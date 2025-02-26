@@ -10,6 +10,9 @@ import { useQuery } from "@tanstack/react-query";
 import { homeCatagoryItems } from "../api.services";
 import { QuickItemInfoDef } from "../components/components.types";
 import ItemCard from "../components/ItemCard.component";
+import Home3ItemsDisplay from "../components/Home3ItemsDisplay";
+import Home4ItemsDisplay from "../components/Home4ItemsDisplay";
+import HomeScrollList from "../components/HomeScrollList";
 
 export default function Home() {
     const { showNavigation, toggleShowNavigation } = useHomeStore();
@@ -19,31 +22,7 @@ export default function Home() {
         navigate(`/search/${itemCategory}`)
     }
 
-    const handleItemClick = (itemId:string|number) => {
-        navigate(`/item/${itemId}`);
-    }
-
-    const ScrollableCategoryItemsList = ({categoryId}:{categoryId:string}) => {
-        const { data, isLoading} = useQuery({
-            queryKey: ['home-category-items', categoryId],
-            queryFn: () => homeCatagoryItems(categoryId)
-        })
-
-        if (isLoading) {
-            return <Skeleton sx={styles.homeScrollableItemsList} />
-        }
-
-        return (
-            <Box sx={styles.homeScrollableItemsList}>
-                {
-                    data.map((item:QuickItemInfoDef) => <ItemCard item={item} onClick={handleItemClick} />)
-                }
-                {
-                    data.map((item:QuickItemInfoDef) => <ItemCard item={item} />) // FIXME: Repeating list due to lack of dummy data
-                }
-            </Box>
-        )
-    }
+    const dummyHomeData = getHomeSectionCategories();
 
     return (
         <div>
@@ -60,14 +39,18 @@ export default function Home() {
                 <Box sx={styles.homeSectionShopBy}>
                     {/* TODO: Add content */}
                 </Box>
-                {
-                    getHomeSectionCategories().map(category => 
-                        <Box sx={styles.homeSectionShopBy}>
-                            <Typography variant="h5">{category.name}</Typography>
-                            <ScrollableCategoryItemsList categoryId={category.slug} />
-                        </Box>
-                    )
-                }
+                <Box sx={styles.homeSectionShopBy}>
+                    <Typography variant="h5">{dummyHomeData[0].name}</Typography>
+                    <Home3ItemsDisplay categoryId={dummyHomeData[0].slug} />
+                </Box>
+                <Box sx={styles.homeSectionShopBy}>
+                    <Typography variant="h5">{dummyHomeData[1].name}</Typography>
+                    <Home4ItemsDisplay categoryId={dummyHomeData[1].slug} />
+                </Box>
+                <Box sx={styles.homeSectionShopBy}>
+                    <Typography variant="h5">{dummyHomeData[2].name}</Typography>
+                    <HomeScrollList categoryId={dummyHomeData[2].slug} />
+                </Box>
             </div>
         </div>
     )
